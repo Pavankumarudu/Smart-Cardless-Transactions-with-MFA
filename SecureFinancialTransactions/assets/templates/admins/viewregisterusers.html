@@ -1,0 +1,55 @@
+{% extends 'admins/adminbase.html' %}
+{% load static %}
+{% block contents %}
+
+<h3 class="text-4xl font-extrabold text-indigo-900 mb-8 text-center">Registered Users</h3>
+<br>
+<div class="overflow-x-auto bg-white shadow-lg rounded-lg">
+    <table class="table table-hover table-bordered text-gray-800 w-full">
+        <thead class="bg-gradient-to-r from-purple-700 to-pink-400 text-white text-center">
+
+
+        <tr class="text-lg font-semibold">
+            <th>S.No</th>
+            <th>Name</th>
+            <th>Login ID</th>
+            <th>Mobile</th>
+            <th>Email</th>
+            <th>Locality</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for i in data %}
+        <tr class="hover:bg-gray-100 transition duration-300 ease-in-out">
+            <td class="text-center py-4">{{ forloop.counter }}</td>
+            <td class="text-center py-4">{{ i.name }}</td>
+            <td class="text-center py-4">{{ i.loginid }}</td>
+            <td class="text-center py-4">{{ i.mobile }}</td>
+            <td class="text-center py-4">{{ i.email }}</td>
+            <td class="text-center py-4">{{ i.locality }}</td>
+            <td class="text-center py-4">
+                {% if i.status == 'waiting' %}
+                <span class="bg-yellow-300 text-yellow-800 font-semibold py-1 px-2 rounded-full">Waiting</span>
+                {% else %}
+                <span class="bg-green-300 text-green-800 font-semibold py-1 px-2 rounded-full">Active</span>
+                {% endif %}
+            </td>
+            <td class="text-center py-4">
+                {% if i.status == 'waiting' %}
+                <a href="/ActivaUsers/?uid={{ i.id }}"
+                   class="text-blue-600 hover:text-blue-800 font-bold py-1 px-3 rounded-lg border border-blue-600 hover:bg-blue-100 transition duration-200">Activate</a>
+                {% else %}
+                <span class="text-green-600 font-semibold">Activated</span> /
+                <a href="/DeleteUsers/?uid={{ i.id }}"
+                   class="text-red-600 hover:text-red-800 font-bold py-1 px-3 rounded-lg border border-red-600 hover:bg-red-100 transition duration-200">Delete</a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

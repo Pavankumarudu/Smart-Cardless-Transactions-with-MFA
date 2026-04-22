@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Smart Cardless Transactions with Multi-Factor Authentication</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@latest"></script>
+
+</head>
+<body>
+
+<header>
+    <h1>Smart Cardless Transactions with Multi-Factor Authentication</h1>
+</header>
+
+<nav>
+    <a href="{% url 'AdminHome' %}">Home</a>
+    <a href="{% url 'RegisterUsersView' %}">Users</a>
+    <a href="{% url 'index' %}">Logout</a>
+
+</nav>
+
+<div class="container">
+    {%block contents%}
+
+    {%endblock%}
+</div>
+
+<footer>
+    &copy; 2025 Secure Transactions Research | All Rights Reserved
+</footer>
+
+<script>
+    // Example JavaScript for dynamic features or later enhancements
+    console.log("Template loaded successfully.");
+</script>
+
+</body>
+</html>

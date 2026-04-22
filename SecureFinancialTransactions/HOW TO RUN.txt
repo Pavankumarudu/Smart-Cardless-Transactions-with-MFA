@@ -1,0 +1,9 @@
+run the django server
+1) Register with Face Image, when face capture press the C key in keyboard
+2)Register couple of Users with different faces
+3)login as user
+4)Intiate the transaction, fill the form
+5)it will verfiy face, when face frame openpress F key in the keyboard
+6)if face match you will get the OTP check
+7)otp copy from Django server terminal
+8)view History

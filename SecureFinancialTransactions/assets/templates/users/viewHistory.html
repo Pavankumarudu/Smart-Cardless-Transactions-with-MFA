@@ -1,0 +1,50 @@
+{% extends 'users/userbase.html'%}
+{%load static%}
+{%block contents%}
+<p>
+<h3 class="text-4xl font-extrabold text-indigo-900 mb-8 text-center">View Transaction Details</h3>
+<br/>
+<table class="table table-hover table-bordered text-gray-800 w-full" >
+    <thead class="bg-gradient-to-r from-purple-700 to-pink-400 text-white text-center">
+
+    <tr class="text-lg font-semibold">
+        <th>S.No</th>
+        <th>Sender Name</th>
+        <th>Recipient Name</th>
+        <th>Amount</th>
+        <th>Message</th>
+        <th>Transaction Date</th>
+        <th>TransactionId</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for i in data %}
+    <tr class="hover:bg-gray-100 transition duration-300 ease-in-out">
+        <td class="text-center py-4">{{ forloop.counter }}</td>
+        <td class="text-center py-4">{{ i.sender_id }}</td>
+        <td class="text-center py-4">{{ i.recipient_id }}</td>
+        <td class="text-center py-4">&#8377; {{ i.amount }}</td>
+        <td class="text-center py-4">{{ i.remarks }}</td>
+        <td class="text-center py-4">{{ i.cdate }}</td>
+        <td class="text-center py-4">{{ i.transaction_id }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</p>
+<br>
+<p>
+    This paper includes algorithms like Convolutional Neural Networks Algorithm, Advanced Encryption Standards
+    Encryption Algorithm and Cosine Similarity for feature mapping. These layers include using mobile devices
+    and advanced identification methods like facial recognition, making the process secure and user-friendly.
+</p>
+<p>
+    Together, these technologies create a robust defense system that not only prevents fraud but also ensures
+    smooth and successful transactions. This combination facilitates the way for future growth of digital finance,
+    providing both safety and convenience.
+</p>
+<p><strong>Keywords:</strong> Machine Learning, Multi-factor authentication, facial recognition, robust defense
+    system, Convolutional Neural Networks Algorithm, Advanced Encryption Standards algorithm, Cosine Similarity.</p>
+
+{%endblock%}
